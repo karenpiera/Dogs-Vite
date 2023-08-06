@@ -1,16 +1,23 @@
-import './navbar.css';
+import React from "react";
+import PropTypes from "prop-types";
+import "./navbar.css";
 
-function Navbar() {
+function Navbar({ handleChange, handleSubmit }) {
   return (
     <div className="search-box">
-      <form >
+      <form onChange={handleChange}>
         <input placeholder="Busqueda" type="search" />
-        <button >
+        <button type="submit" onClick={handleSubmit}>
           Buscar
         </button>
       </form>
     </div>
   );
 }
+
+Navbar.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+};
 
 export default Navbar;
