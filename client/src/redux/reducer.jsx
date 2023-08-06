@@ -2,7 +2,7 @@ const initialState = {
 	dogs: [],
 	allDogs: [],
 	temperaments: [],
-	detail: [],
+	detail: {},
 };
 
 function rootReducer(state = initialState, action) {

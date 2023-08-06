@@ -29,9 +29,10 @@ function Home() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(getDogByName(name));
-    setName("");
+    //setName("");
   }
 
+  
 
   // function handleSubmit (){
   //   const filtered= allDogs.filter(dog=> dog.name.includes(serachString));
@@ -40,21 +41,24 @@ function Home() {
 
   useEffect(() => {
 		dispatch(getDogs());
-		//  return (()=>{
-		// 	clearDetail()
+		// return (()=>{
+		// clearDetail()
 		// })
 	}, [dispatch]);
 
 	// useEffect(() => {
-	// 	dispatch(getDogTemperament());
-	// }, []);
-
+	// 	dispatch(getDetail());
+	// }, [dispatch]);
 
 
   return (
     <div className="home">
       <h1 className="home-title">Henry Dogs</h1>
-      <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
+      {/* {
+            location.pathname !== '/'&& <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
+            
+         } */}
+         <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
       <Cards allDogs={allDogs}  />
     </div>
   );

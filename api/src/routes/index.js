@@ -26,17 +26,27 @@ router.get("/dogs", async (req, res) => {
 	}
 });
 
-router.get("/dogs/:idRaza", async (req, res) => {
-	const allDogs = await getAllDogs();
-	const { id } = req.params;
-
-	if (id) {
-		const dogId = await allDogs.filter((dog) => dog.id == id);
-		dogId.length
-			? res.send(dogId)
-			: res.status(404).send("404 Breed not found");
+router.get('/dogs/:id', async (req, res) => {
+	try {
+	  const allDogs = await getAllDogs();
+	  const { id } = req.params;
+  
+	  if (id) {
+		const dogDetails = allDogs.find((dog) => dog.id == id);
+  
+		if (dogDetails) {
+		  res.send(dogDetails);
+		} else {
+		  res.status(404).send('Breed not found');
+		}
+	  } else {
+		res.status(400).send('Invalid ID');
+	  }
+	} catch (error) {
+	  console.error('Error al obtener los detalles del perro:', error.message);
+	  res.status(500).send('Server Error');
 	}
-});
+  });
 
 // router.get("/dogs/name", async (req, res) => {
 //   const allDogs = await getAllDogs();
