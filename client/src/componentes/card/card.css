@@ -1,0 +1,39 @@
+.card-container {
+  width: 180px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+}
+
+.card-container h2 {
+  margin: 5px 0;
+}
+
+.card-container p {
+  margin: 5px 0;
+}
+.card-container:hover {
+  transform: scale(1.05);
+}
+
+.imageContainer {
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
