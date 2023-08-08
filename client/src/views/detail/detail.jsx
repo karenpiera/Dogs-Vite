@@ -20,6 +20,11 @@ export default function Detail() {
   return (
     <div>
       <div>
+      <video autoPlay muted loop id="video-background">
+  <source src="../../public/video.mp4" type="video/mp4" />
+  Tu navegador no admite el elemento de video.
+</video>
+
       <Link to="/home" >
   <span>HOME</span>
 </Link>
@@ -31,9 +36,6 @@ export default function Detail() {
       <img
         src={dogDetail.image}
         alt={dogDetail.name}
-        width="476"
-        height="300"
-        className="detailImage"
       />
       <div className="detailTemperamentsContainer">
         <h3> temperaments:</h3>

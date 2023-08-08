@@ -5,15 +5,16 @@ import "./navbar.css";
 function Navbar({ handleChange, handleSubmit }) {
   return (
     <div className="search-box">
-<Link to="/"  >
-  <span>LANDING PAGE</span>
-  </Link>    
+      <div>
+        <Link to="/" className="link">
+          <span>LANDING PAGE</span>
+        </Link>
 
-<Link to="/formulario"  >
-  <span>CREAT DOGS</span>
-  </Link>
- 
- 
+        <Link to="/formulario" className="link">
+          <span>CREATE DOGS</span>
+        </Link>
+      </div>
+
       <form onChange={handleChange}>
         <input placeholder="Busqueda" type="search" />
         <button type="submit" onClick={handleSubmit}>

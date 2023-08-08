@@ -9,8 +9,6 @@ function rootReducer(state = initialState, action) {
     let weightFilter;
     let allDogs3;
     let tempDogs;
-    let allDogs2;
-    let createdFilter;
     let dogsSorted;
 
 	switch (action.type) {
@@ -70,37 +68,6 @@ function rootReducer(state = initialState, action) {
 					action.payload === "Temps"
 						? allDogs3
 						: tempDogs,
-			};
-
-		case "FILTER_BY_CREATED":
-			allDogs2 = state.allDogs;
-			createdFilter =
-				action.payload === "AllDogs"
-					? allDogs2
-					: allDogs2.filter((e) => {
-							if (
-								action.payload ===
-								"Created"
-							) {
-								if (
-									e.createdInDB
-								) {
-									return e;
-								}
-							} else if (
-								action.payload ===
-								"Api"
-							) {
-								if (
-									!e.createdInDB
-								) {
-									return e;
-								}
-							}
-  });
-			return {
-				...state,
-				dogs: createdFilter,
 			};
 
 		case "FILTER_BY_NAME":
