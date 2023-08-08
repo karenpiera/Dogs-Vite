@@ -1,4 +1,5 @@
 //import React from "react";
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,22 +9,19 @@ import "./detail.css";
 export default function Detail() {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const selectedDog = useSelector((state) => state.detail);
+  const dogDetail = useSelector((state) => state.detail);
 
   useEffect(() => {
     dispatch(getDetail(id));
   }, [dispatch, id]);
 
-  if (!selectedDog) {
-    return <h2>Breed not found</h2>;
-  }
 
   return (
     <div className="detailContainer">
-      <h2 className="detailName">{selectedDog.name}</h2>
+      <h2 className="detailName">{dogDetail.name}</h2>
       <img
-        src={selectedDog.image}
-        alt={selectedDog.name}
+        src={dogDetail.image}
+        alt={dogDetail.name}
         width="476"
         height="300"
         className="detailImage"
@@ -31,30 +29,30 @@ export default function Detail() {
       <div className="detailTemperamentsContainer">
         <h3> temperaments:</h3>
         <h4 className="detailTemperaments">
-          {selectedDog.createdInDB
-            ? selectedDog.temperaments.map((temperament) => (
+          {dogDetail.createdInDB
+            ? dogDetail.temperaments.map((temperament) => (
                 <span key={temperament.id}>{temperament.name}, </span>
               ))
-            : selectedDog.temperament}
+            : dogDetail.temperament}
         </h4>
       </div>
 
       <div className="heightAndWeightAndSpan">
         <h3>weight:</h3>
-        <h4>{selectedDog.weight} kg</h4>
+        <h4>{dogDetail.weight} kg</h4>
       </div>
 
       <div className="heightAndWeightAndSpan">
         <h3>Height:</h3>
-        <h4>{selectedDog.height} cm</h4>
+        <h4>{dogDetail.height} cm</h4>
       </div>
 
       <div className="heightAndWeightAndSpan">
         <h3>life span:</h3>
         <h4>
-          {selectedDog.createdInDB
-            ? `${selectedDog.life_span} years approx`
-            : selectedDog.life_span}
+          {dogDetail.createdInDB
+            ? `${dogDetail.life_span} years approx`
+            : dogDetail.life_span}
         </h4>
       </div>
     </div>
