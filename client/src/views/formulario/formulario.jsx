@@ -1,10 +1,9 @@
 /* eslint-disable react/jsx-key */
-
 // eslint-disable-next-line no-unused-vars
-
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getDogTemperament } from "../../redux/action";
+import { Link } from "react-router-dom";
 import './formulario.css';
 import axios from "axios";
 
@@ -13,6 +12,7 @@ function validate(input){
   if( !input.name){
     errors.name= "Name is required!";
   }
+  
   if( input.heightMin <= 0){
     errors.heightMin= "Height Min is required!";
     }
@@ -91,7 +91,11 @@ useEffect(() => {
   return (
     <div className="App"> 
       <h1>Formulario Dogs</h1>
+ <Link to="/home" >
+  <span>HOME</span>
+</Link>
     <form onSubmit={handlerSumit}>
+ 
 
       <div>
       <label>Name </label>
@@ -129,7 +133,8 @@ useEffect(() => {
       {errors.yearsOfLife && <span className="error">{errors.yearsOfLife}</span>}
       </div>
 
-      <div> temperament
+      <div> 
+      <label>Temperaments </label>
 
       <select onChange={handleSelect} className="listTemps">
   <option hidden>Dogs temperaments</option>

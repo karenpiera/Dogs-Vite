@@ -11,10 +11,17 @@ function Home() {
 
 	const dispatch = useDispatch();
 	const allDogs = useSelector((state) => state.dogs);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 	//const temperament = useSelector((state) => state.temperaments);
   // const [filtered,setFiltered] = useState(allDogs)
   // const [searchString, setSearchString]=useState("")
   const [name, setName] = useState("");
+
+  const indexOfLastItem = currentPage * itemsPerPage;
+const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
+
 
 
   function handleChange(e) {
@@ -32,6 +39,13 @@ function Home() {
     //setName("");
   }
 
+  function nextPage() {
+    setCurrentPage((prevPage) => prevPage + 1);
+  }
+  
+  function prevPage() {
+    setCurrentPage((prevPage) => prevPage - 1);
+  }
   
 
   // function handleSubmit (){
@@ -59,7 +73,17 @@ function Home() {
             
          } */}
          <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
-      <Cards allDogs={allDogs}  />
+  <button onClick={prevPage} disabled={currentPage === 1}>
+    Previous
+  </button>
+  <span>{currentPage}</span>
+  <button onClick={nextPage} disabled={indexOfLastItem >= allDogs.length}>
+    Next
+  </button>
+         <Cards allDogs={currentItems} />
+         <div className="pagination">
+</div>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { getDetail } from "../../redux/action";
 import "./detail.css";
 
@@ -17,6 +18,14 @@ export default function Detail() {
 
 
   return (
+    <div>
+      <div>
+      <Link to="/home" >
+  <span>HOME</span>
+</Link>
+        
+      </div>
+    
     <div className="detailContainer">
       <h2 className="detailName">{dogDetail.name}</h2>
       <img
@@ -55,6 +64,7 @@ export default function Detail() {
             : dogDetail.life_span}
         </h4>
       </div>
+    </div>
     </div>
   );
 }
