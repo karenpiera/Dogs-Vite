@@ -8,7 +8,7 @@ function Landing() {
     
       <h1>Landing Dogs</h1>
       
-      <Link to="/home" >
+      <Link to="/home" className="link" >
   <span>HOME</span>
 </Link>
     </div>

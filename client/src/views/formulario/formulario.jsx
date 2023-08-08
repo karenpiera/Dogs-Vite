@@ -48,7 +48,7 @@ function Formulario() {
   weightMin:"",
   weightMax:"",
   yearsOfLife:"",
-  temperament:""
+  temperament:[]
   })
 
        
@@ -91,7 +91,7 @@ useEffect(() => {
   return (
     <div className="App"> 
       <h1>Formulario Dogs</h1>
- <Link to="/home" >
+ <Link to="/home" className="link" >
   <span>HOME</span>
 </Link>
     <form onSubmit={handlerSumit}>

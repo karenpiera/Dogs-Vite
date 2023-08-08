@@ -8,6 +8,7 @@ import Cards from "../../componentes/cards/cards";
 import "./home.css";
 
 
+
 function Home() {
 
 	const dispatch = useDispatch();
@@ -92,30 +93,26 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
   return (
     <div className="home">
       <video autoPlay muted loop id="video-background">
-  <source src="../../public/video.mp4" type="video/mp4" />
+  <source src="video.mp4" type="video/mp4" />
 </video>
 
-      {/* {
-            location.pathname !== '/'&& <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
-            
-         } */}
-         <div>
-         <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
-
-         
-      <h2 className="home-title">Henry Dogs</h2>
+ <div>
+  <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
+  
+  <h2 className="home-title">Henry Dogs</h2>
   </div>
 
-        <div>
-          <select placeholder="A-Z" onChange={handleSort} > 
-          <option hidden="all">Default Order</option>
-							<option value="Asc">{" "}A-Z{" "}</option>
-							<option value="Desc">{" "}Z-A{" "}</option>
-          </select>          
-          </div> 
+  <div className="search-box">
+ <div>
+  <select placeholder="A-Z" onChange={handleSort} > 
+  <option hidden="all">Default Order</option>
+	<option value="Asc">{" "}A-Z{" "}</option>
+  <option value="Desc">{" "}Z-A{" "}</option>
+  </select>          
+</div> 
 
 <div>
-<select placeholder="peso" onChange={handleFilterDogsByWeight} >
+<select  onChange={handleFilterDogsByWeight} >
 <option hidden="AllWeights">Weights</option>
 <option value="HeavyWeight">Heaviest breeds</option>
 <option value="LightWeight">Lightest breeds	</option>
@@ -131,8 +128,7 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
     </option>))}
 </select>
 </div>
-
-
+</div>
 
   <div>
   <button className="custom-cursor" onClick={prevPage} disabled={currentPage === 1}>
@@ -144,6 +140,8 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
     Next
   </button>
   </div>
+
+
          <Cards allDogs={currentItems} />
          <div className="pagination">
 </div>

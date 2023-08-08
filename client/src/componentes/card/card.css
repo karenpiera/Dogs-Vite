@@ -11,19 +11,28 @@
   backface-visibility: hidden;
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-  background-color: #787777;
-
+  background-color: #d3caca;
+  background-image:url("../../../public/fondo.jpg");
+  box-shadow:0px 0px 10px  #2c088d;
+  
 }
 
 .card-container h2 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #440de8; 
   margin: 5px 0;
+  outline: none;
 }
 
 .card-container p {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #3a2b68; 
   margin: 5px 0;
+  outline: none;
 }
 .card-container:hover {
   transform: scale(1.05);
+  
 }
 
 .imageContainer {
@@ -39,3 +48,7 @@
   height: 100%;
   object-fit: cover;
 }
+.imageContainer:hover{
+	-webkit-transform:scale(1);transform:scale(1.1);}
+.contenedor {overflow:hidden;
+	}

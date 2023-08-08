@@ -1,7 +1,5 @@
-/* detail.css */
-
-
-.detailContainer {
+.card {
+	background-image: url("../../../public/fondo.jpg");
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -11,91 +9,73 @@
 	width: 900px;
 	align-items: center;
 	margin: 3rem auto;
+	border: 4px;
+	box-shadow:0px 0px 10px 6px #2c088d;
+	
 }
-
-.detailName {
-	font-size: 2rem;
-}
-
-.detailImage {
-	margin: auto;
-	width: 100px;
-	height: fit-content;
-}
-
-.detailTemperamentsContainer {
+  
+  
+  .content {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
+	align-items: stretch;
+	padding: 0px;
+  }
+  
+  .text {
+	flex: 1;
+  }
+  
+  .text h1 {
+	font-family: "Homer Simpson UI";
+	height: 80px;
+	font-size: 60px;
+	font-weight: bold;
+	-webkit-text-stroke-width: 1.5px; /* Ancho del borde */
+	-webkit-text-stroke-color: #2e6ad9; /* Color del borde */
+	
+  }
+  
+  .text h2 {
+	margin: 1px 30px 40px 10px;
+	font-size: 45px;
+	-webkit-text-stroke-width: 0.9px; /* Ancho del borde */
+	-webkit-text-stroke-color: #3a19cf; /* Color del borde */
+	
+  }
+  .text h5{
+	padding: 10px 0px 5px;
+	margin: 10px;
+	font-size: 27px;
+	-webkit-text-stroke-width: 0.5px; /* Ancho del borde */
+	-webkit-text-stroke-color: #3a19cf; /* Color del borde */
+	display: inline; 
+	
+  }
+  .text b {
+	font: oblique bold 120% ;
+	margin: 0;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 100%;
+
+  }
+  
+  .imageCont {
+	width:450px;
+	height:300px;
+	padding: 50px 0px;	
 }
 
-.detailTemperamentsContainer h3 {
-	text-decoration: underline;
-	text-decoration-thickness: 3px;
+.imagen {
+	object-fit: cover;
+  width:80%;
+  height:100%;
+  padding: 25px;
 }
-
-.heightAndWeightAndSpan {
-	display: flex;
-	align-items: center;
-	line-height: 1.5em;
-}
-
-.heightAndWeightAndSpan h3 {
-	text-decoration: underline;
-	text-decoration-thickness: 3px;
-}
-
-.heightAndWeightAndSpan h4 {
-	margin: 0 5px;
-	padding: 0;
-}
-
-
-
-
-/* 
-.card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
-}
-
-.content {
-  display: flex;
-  align-items: center;
-}
-
-.imageContainer {
-  flex: 1;
-  text-align: center;
-}
-
-.image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.text {
-  flex: 1;
-  padding-left: 16px;
-}
-
-h1 {
-  margin-bottom: 8px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-h2 {
-  margin-bottom: 4px;
-  font-size: 18px;
-}
-
-p {
-  margin-bottom: 2px;
-  font-size: 16px;
-} */
+.imagen:hover{
+	-webkit-transform: rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;	}
+  

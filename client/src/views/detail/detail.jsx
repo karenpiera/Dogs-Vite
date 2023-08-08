@@ -18,56 +18,46 @@ export default function Detail() {
 
 
   return (
-    <div>
-      <div>
-      <video autoPlay muted loop id="video-background">
-  <source src="../../public/video.mp4" type="video/mp4" />
-  Tu navegador no admite el elemento de video.
-</video>
-
-      <Link to="/home" >
-  <span>HOME</span>
-</Link>
-        
-      </div>
-    
     <div className="detailContainer">
-      <h2 className="detailName">{dogDetail.name}</h2>
-      <img
-        src={dogDetail.image}
-        alt={dogDetail.name}
-      />
-      <div className="detailTemperamentsContainer">
-        <h3> temperaments:</h3>
-        <h4 className="detailTemperaments">
-          {dogDetail.createdInDB
-            ? dogDetail.temperaments.map((temperament) => (
-                <span key={temperament.id}>{temperament.name}, </span>
-              ))
-            : dogDetail.temperament}
-        </h4>
-      </div>
+    <div className="linkHome">
+      <Link to="/home" className="link">
+        <span>HOME</span>
+      </Link>
+    </div>
 
-      <div className="heightAndWeightAndSpan">
-        <h3>weight:</h3>
-        <h4>{dogDetail.weight} kg</h4>
-      </div>
-
-      <div className="heightAndWeightAndSpan">
-        <h3>Height:</h3>
-        <h4>{dogDetail.height} cm</h4>
-      </div>
-
-      <div className="heightAndWeightAndSpan">
-        <h3>life span:</h3>
-        <h4>
-          {dogDetail.createdInDB
-            ? `${dogDetail.life_span} years approx`
-            : dogDetail.life_span}
-        </h4>
+    <div className="card">
+      <div className="content">
+        <div className="text">
+          <h2 className="detailName">{dogDetail.name}</h2>
+          <h5>Temperaments:</h5>
+          <b className="detailTemperaments">
+            {dogDetail.createdInDB
+              ? dogDetail.temperaments.map((temperament) => (
+                  <span key={temperament.id}>{temperament.name}, </span>
+                ))
+              : dogDetail.temperament}
+          </b>
+          <h3></h3>
+          <h5>Weight:</h5>
+          <b>{dogDetail.weight} kg</b>
+          <h3></h3>
+          <h5>Height:</h5>
+          <b>{dogDetail.height} cm</b>
+          <h3></h3>
+          <h5>Life span:</h5>
+          <b>
+            {dogDetail.createdInDB
+              ? `${dogDetail.life_span} years approx`
+              : dogDetail.life_span}
+          </b>
+        </div>
+              
+        <div className="imageCont">
+          <img src={dogDetail.image} alt={dogDetail.name} className="imagen" />
+        </div>
       </div>
     </div>
-    </div>
+  </div>
   );
 }
 

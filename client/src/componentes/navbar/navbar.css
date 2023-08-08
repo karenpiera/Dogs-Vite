@@ -1,3 +1,30 @@
+/* navbar.css */
+.navbar {
+  background-color: #fff;
+  border-bottom: 1px solid #d1d5db;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.refresh-button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .link {
   color: #007bff;
   text-decoration: none;
@@ -12,11 +39,11 @@
 
 .search-box {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
   background-color: #f2f2f2;
-  border-bottom: 1px solid #ddd;
+  border-radius: 5px;
+  border: 1px solid #ddd;
 }
 
 .search-box form {
@@ -26,14 +53,14 @@
 
 .search-box input {
   padding: 5px;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: 5px 0 0 5px;
 }
 
 .search-box button {
   padding: 5px 10px;
   background-color: #007bff;
-  color: white;
+  color: rgb(201, 61, 61);
   border: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
@@ -42,3 +69,4 @@
 .search-box button:hover {
   background-color: #0056b3;
 }
+
