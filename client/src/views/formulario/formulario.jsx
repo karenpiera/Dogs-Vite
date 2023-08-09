@@ -81,8 +81,8 @@ function handlerSumit(e){
   e.preventDefault();
   axios.post("http://localhost:3001/dog",input )
   .then(res=>alert(res))
-
 }
+
 useEffect(() => {
   dispatch(getDogTemperament());
 }, [dispatch]);
@@ -90,11 +90,11 @@ useEffect(() => {
 
   return (
     <div className="App"> 
-      <h1>Formulario Dogs</h1>
+      <h1>Form Dogs</h1>
  <Link to="/home" className="link" >
   <span>HOME</span>
 </Link>
-    <form onSubmit={handlerSumit}>
+    <form onSubmit={handlerSumit} className="formulario">
  
 
       <div>

@@ -12,7 +12,7 @@
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
   background-color: #d3caca;
-  background-image:url("../../../public/fondo.jpg");
+  background-image:url("fondo.jpg");
   box-shadow:0px 0px 10px  #2c088d;
   
 }

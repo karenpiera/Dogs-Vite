@@ -1,5 +1,4 @@
 
-  
   .home-title {
     margin-top: 20px;
     margin-bottom: 50px;
@@ -15,7 +14,7 @@
   }
 
   .custom-cursor {
-    cursor:url("../../../public/huelladog.png")
+    cursor:url("huelladog.png")
     auto;
   }
   #video-background {
@@ -27,8 +26,7 @@
     object-fit: cover;
     z-index: -1;
   }
-  /* home.css */
-/* ... tus estilos existentes ... */
+  
 
 .pagination {
   display: inline-block;
@@ -43,7 +41,7 @@
 }
 
 .pagination a:hover {
-  background-color: #e10f0f;
+  background-color: #4a4484;
 }
 
 .pagination span {
@@ -63,36 +61,78 @@
   color: #0056b3;
   text-decoration: underline;
 }
-  
-.search-box {
+ /* Estilos para los selects */
+.search-box select {
+  color: #1919db;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid #595858;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+/* Estilos para los options dentro de los selects */
+.search-box select option {
+  color: #595858;
+  font-size: 14px;
+}
+
+/* Cambiar el color de fondo cuando el select está en foco */
+.search-box select:focus {
+    outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #ddd;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
 }
 
-.search-box form {
-  display: flex;
-  align-items: center;
-}
-
-.search-box input {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px 0 0 5px;
-}
-
-.search-box button {
-  padding: 5px 10px;
+/* Estilos para los botones de navegación */
+.custom-cursor,
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.search-box button:hover {
+.custom-cursor:hover,
+button:hover {
   background-color: #0056b3;
 }
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
+/* Estilos para el número de página */
+span {
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+/* Estilos para la sección de paginación */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+
+
+
+

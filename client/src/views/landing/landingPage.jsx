@@ -5,17 +5,18 @@ import { Link } from "react-router-dom";
 function Landing() {
   return (
     <div className="contenedor">
-    <div className="background-image">
+    <div className="content-section">
+      <img src="welcomw.png" alt="Imagen de Prueba"></img>
       <div>
-        <h1>Landing Dogs</h1>
-        <div>
-          <Link to="/home" className="link">
-            <span>HOME</span>
-          </Link>
-        </div>
+        <Link to="/home" >
+        <img src="home-huella.png" alt="Imagen Botón Home" className="home-button-image"/>
+        </Link>
       </div>
     </div>
+    <div className="background-image"></div>
   </div>
+  
+  
   
   );
 }

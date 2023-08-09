@@ -37,13 +37,13 @@ export default function Detail() {
                 ))
               : dogDetail.temperament}
           </b>
-          <br/>
+          <h3></h3>
           <h5>Weight:</h5>
           <b>{dogDetail.weight} kg</b>
-          <br/>
+          <h3></h3>
           <h5>Height:</h5>
           <b>{dogDetail.height} cm</b>
-          <br/>
+          <h3></h3>
           <h5>Life span:</h5>
           <b>
             {dogDetail.createdInDB

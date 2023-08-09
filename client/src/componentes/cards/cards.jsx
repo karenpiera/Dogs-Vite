@@ -14,8 +14,7 @@ function Cards({ allDogs }) {
 }
 
 Cards.propTypes = {
-  allDogs: PropTypes.array, // Aquí puedes ajustar el tipo según la estructura de datos de allDogs
-};
+  allDogs: PropTypes.array,};
 
 export default Cards;
 

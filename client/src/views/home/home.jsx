@@ -105,9 +105,9 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
   <div className="search-box">
  <div>
   <select placeholder="A-Z" onChange={handleSort} > 
-  <option hidden="all">Default Order</option>
-	<option value="Asc">{" "}A-Z{" "}</option>
-  <option value="Desc">{" "}Z-A{" "}</option>
+  <option hidden="order default">Default Order</option>
+	<option value="A-Z">{" "}A-Z{" "}</option>
+  <option value="Z-a">{" "}Z-A{" "}</option>
   </select>          
 </div> 
 
@@ -129,6 +129,7 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
 </select>
 </div>
 </div>
+
 
   <div>
   <button className="custom-cursor" onClick={prevPage} disabled={currentPage === 1}>
