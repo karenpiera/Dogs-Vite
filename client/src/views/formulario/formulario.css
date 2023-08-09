@@ -1,6 +1,9 @@
 /* ... Otros estilos ... */
 
 .App {
+  background-image: url("../../../public/fondo.jpg");
+    background-size: cover; /* Redimensiona la imagen para cubrir el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +21,7 @@
   width: 100%;
   max-width: 400px;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: 2px solid #3b22dc;
   border-radius: 5px;
   margin-top: 20px;
 }
@@ -37,7 +40,7 @@
 }
 
 .App .error {
-  color: red;
+  color: rgb(24, 58, 225);
   font-weight: bold;
   margin-top: 5px;
 }
@@ -64,6 +67,18 @@
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+.link {
+	color: #007bff;
+	text-decoration: none;
+	margin-right: 10px;
+	font-weight: bold;
+  }
+  
+  .link:hover {
+	color: #0056b3;
+	text-decoration: underline;
+  }
+  
 
 
 
