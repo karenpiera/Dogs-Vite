@@ -48,7 +48,7 @@ export default function Detail() {
           <h5>Height:</h5>
           <b>{dogDetail.height} cm</b>
           <h3></h3>
-          <h5>Life span:</h5>
+          <h5>Years Of Life:</h5>
           <b>
             {dogDetail.createdInDB
               ? `${dogDetail.life_span} years approx`

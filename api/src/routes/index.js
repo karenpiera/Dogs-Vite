@@ -68,47 +68,43 @@ router.get("/dogs/name", async (req, res) => {
 });
 
 router.get("/temperament", async (req, res) => {
-	try {
-    await getTemperament(); // Llama a la función para obtener y guardar los temperamentos en la base de datos
-    res.status(200).send('Temperaments obtained and saved successfully.');
-  } catch (error) {
-    console.error('Error fetching and saving temperaments:', error);
-    res.status(500).send('An error occurred while fetching and saving temperaments.');
-  }
+	const dogTemp = await getTemperament();
+	const allTemper = await Temperament.findAll();
+	const filteredTemper = await allTemper.map((obj) => obj.name);
+	res.status(200).send(filteredTemper);
 });
 
 router.post("/dogs", async (req, res) => {
 	const {
-	  name,
-	  minimHeight,
-	  maximHeight,
-	  minimWeight,
-	  maximWeight,
-	  yearsOfLife,
-	  image,
-	  createdInDB,
-	  temperaments,
+		name,
+		heightMin,
+		heightMax,
+		weightMin,
+		weightMax,
+		life_span,
+		image,
+		createdInDB,
+		temperament,
 	} = req.body;
-  
-	let height = Math.floor((minimHeight + maximHeight) / 2);
-	let weight = Math.floor((minimWeight + maximWeight) / 2);
-  
+console.log(heightMin)
+	let height = `${heightMin} - ${heightMax}`;
+	let weight = `${weightMin} - ${weightMax}`;
+
 	const breedCreated = await Dog.create({
-	  name,
-	  height,
-	  weight,
-	  yearsOfLife,
-	  image,
-	  createdInDB,
+		name,
+		height,
+		weight,
+		life_span,
+		image,
+		createdInDB,
 	});
-  
+
 	const temperamentDb = await Temperament.findAll({
-	  where: { name: temperaments },
+		where: { name: temperament },
 	});
-  
-	breedCreated.addTemperaments(temperamentDb);
+
+	breedCreated.addTemperament(temperamentDb);
 	res.send("Breed created");
-  });
-  
+});
 
 module.exports = router;

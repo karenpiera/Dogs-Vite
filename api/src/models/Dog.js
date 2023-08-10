@@ -10,23 +10,23 @@ const { DataTypes } = require('sequelize');
       },
       image: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       height: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       weight: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
-      yearsOfLife: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
+      life_span: {
+        type: DataTypes.STRING,
+        allowNull: false,
       },
     createdInDB: {
       type: DataTypes.BOOLEAN,
