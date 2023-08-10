@@ -19,24 +19,28 @@ export default function Detail() {
 
   return (
     <div className="detailContainer">
+  <div className="top-section">
+    <img src="../../../public/patan-cel.png" alt="Imagen de Cabecera" className="header-image" />
     <div className="linkHome">
       <Link to="/home" className="link">
         <span>HOME</span>
       </Link>
     </div>
+  </div>
 
     <div className="card">
       <div className="content">
         <div className="text">
           <h2 className="detailName">{dogDetail.name}</h2>
           <h5>Temperaments:</h5>
-          <b className="detailTemperaments">
-            {dogDetail.createdInDB
-              ? dogDetail.temperaments.map((temperament) => (
-                  <span key={temperament.id}>{temperament.name}, </span>
-                ))
-              : dogDetail.temperament}
-          </b>
+<b className="detailTemperaments">
+  {dogDetail.createdInDB && dogDetail.temperaments
+    ? dogDetail.temperaments.map((temperament) => (
+        <span key={temperament.id}>{temperament.name}, </span>
+      ))
+    : dogDetail.temperament}
+</b>
+
           <h3></h3>
           <h5>Weight:</h5>
           <b>{dogDetail.weight} kg</b>

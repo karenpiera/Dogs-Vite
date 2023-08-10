@@ -26,7 +26,7 @@ const { DataTypes } = require('sequelize');
       },
       yearsOfLife: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
     createdInDB: {
       type: DataTypes.BOOLEAN,

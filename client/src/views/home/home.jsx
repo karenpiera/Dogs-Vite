@@ -98,8 +98,6 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
 
  <div>
   <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
-  
-  <h2 className="home-title">Henry Dogs</h2>
   </div>
 
   <div className="search-box">
