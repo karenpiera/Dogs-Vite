@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 //import React from "react";
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDetail } from "../../redux/action";
+import { getDetail,deleteDetail } from "../../redux/action";
 import "./detail.css";
 
 export default function Detail() {
@@ -12,8 +13,11 @@ export default function Detail() {
   const { id } = useParams();
   const dogDetail = useSelector((state) => state.detail);
 
+ 
+
   useEffect(() => {
     dispatch(getDetail(id));
+    return()=>{dispatch(deleteDetail())}
   }, [dispatch, id]);
 
   console.log("Dog Detail:", dogDetail);
@@ -23,7 +27,7 @@ export default function Detail() {
   <div className="top-section">
     <img src="../../../public/pata.png" alt="Imagen de Cabecera" className="header-image" />
     <div className="linkHome">
-    <img src="../../../public/dogHouse.png" className="dogHouse" alt="Imagen de Prueba"></img>
+    <img src="../../../public/sss.png" className="dogHouse" alt="Imagen de Prueba"></img>
     <br/>
       <Link to="/home" className="link">
         <span>HOME</span>
@@ -34,8 +38,8 @@ export default function Detail() {
       <Link to="/formulario" className="link">
         <span>CREAT DOGS</span>
       </Link>
+    <img src="../../../public/dib.png" className="dogCreat" alt="Imagen de Prueba"></img>
     </div>
-    {/* <img src="../../../public/creat.png" className="dogHouse" alt="Imagen de Prueba"></img> */}
 
   </div>
 

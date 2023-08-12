@@ -52,11 +52,20 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
   }
 
   function handleSort(e) {
-		e.preventDefault();
-		dispatch(filterByName(e.target.value));
-		setCurrentPage(1);
-		setOrden(`${e.target.value}`);
-	}
+    e.preventDefault();
+    const selectedValue = e.target.value;
+    
+    if (selectedValue === "A-Z") {
+      dispatch(filterByName("Asc")); // Llama a la acción para ordenar A-Z
+    } else if (selectedValue === "Z-A") {
+      dispatch(filterByName("Desc")); // Llama a la acción para ordenar Z-A
+    }
+    
+    setCurrentPage(1);
+    setOrden(selectedValue);
+  }
+  
+
 
 	function handleFilterDogsByWeight(e) {
 		e.preventDefault();
@@ -102,10 +111,10 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
 
   <div className="search-box">
  <div>
-  <select placeholder="A-Z" onChange={handleSort} > 
+  <select  onChange={handleSort} > 
   <option hidden="order default">Default Order</option>
 	<option value="A-Z">{" "}A-Z{" "}</option>
-  <option value="Z-a">{" "}Z-A{" "}</option>
+  <option value="Z-A">{" "}Z-A{" "}</option>
   </select>          
 </div> 
 

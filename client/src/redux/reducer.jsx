@@ -71,29 +71,14 @@ function rootReducer(state = initialState, action) {
 			};
 
 		case "FILTER_BY_NAME":
-		dogsSorted =action.payload === "Asc"
-					? state.dogs.sort(function (a, b) {
-							if (a.name > b.name) {
-								return 1;
-							}
-							if (b.name > a.name) {
-								return -1;
-							}
-							return 0;
-					})
-					: state.dogs.sort(function (a, b) {
-							if (a.name > b.name) {
-								return -1;
-							}
-							if (b.name > a.name) {
-								return 1;
-							}
-							return 0;
-					});
-			return {
-				...state,
-				dogs: dogsSorted,
-			};
+			dogsSorted = action.payload === "Asc"
+			? state.dogs.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
+			: state.dogs.sort((a, b) => b.name.toLowerCase().localeCompare(a.name.toLowerCase())); 
+		return {
+			...state,
+			dogs: dogsSorted,
+		};
+
 		case "GET_DOG_BY_NAME":
 			return {
 				...state,
@@ -116,6 +101,7 @@ function rootReducer(state = initialState, action) {
 		default:
 			return state;
 	}
+	
 }
 
 export default rootReducer;

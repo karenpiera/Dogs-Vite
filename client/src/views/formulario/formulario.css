@@ -10,20 +10,19 @@
   flex-direction: column;
 }
 
-.App h1 {
-  font-size: 2rem;
-}
-
 .App form {
+  
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 100%;
-  max-width: 400px;
-  padding: 20px;
-  border: 2px solid #3b22dc;
-  border-radius: 5px;
+  max-width: 800px;
+  padding: 50px;
+  border: 3px solid #3b22dc;
+  border-radius:30px;
   margin-top: 20px;
+  box-shadow:0px 0px 10px 6px #0b5dd0;
+
 }
 
 .App label {
@@ -35,7 +34,7 @@
   width: 100%;
   padding: 8px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 2px solid #1f38f4;
   border-radius: 5px;
 }
 
@@ -79,10 +78,45 @@
 	text-decoration: underline;
   }
   
+  .dogHous{
+    width: 70px; /* Ajusta el ancho de la imagen según tus preferencias */
+    height: 70px;
+    }
 
 
-
-
+    .formulario {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    
+    .input-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .input-container label {
+      margin-bottom: 5px;
+    }
+    
+    .input-container input {
+      width: 100%;
+    }
+        
+.refresh{
+  position: absolute;
+    width: 60px; 
+    height: 70px;
+    top: 10px;
+    left: 160px;
+    margin-top: 0px;
+    margin-left: 300px;
+  }
+  .refresh {
+    cursor: pointer;
+    margin-right: 10px;
+  }
 
 
 /* .App {

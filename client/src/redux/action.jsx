@@ -62,3 +62,9 @@ export const filterByTemperament = (payload) => {
 		payload,
 	};
 };
+
+export const deleteDetail = () => {
+    return {
+            type: "DELETE_DETAIL",
+        }
+    }
