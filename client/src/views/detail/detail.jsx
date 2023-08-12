@@ -24,8 +24,11 @@ export default function Detail() {
 
   return (
     <div className="detailContainer">
+      <video autoPlay muted loop id="video-background">
+  <source src="../../../public/video.mp4" type="video/mp4" />
+</video>
   <div className="top-section">
-    <img src="../../../public/pata.png" alt="Imagen de Cabecera" className="header-image" />
+    <img src="../../../public/patancito.png" alt="Imagen de Cabecera" className="header-image" />
     <div className="linkHome">
     <img src="../../../public/sss.png" className="dogHouse" alt="Imagen de Prueba"></img>
     <br/>
