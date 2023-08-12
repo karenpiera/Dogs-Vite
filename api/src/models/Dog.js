@@ -9,8 +9,8 @@ const { DataTypes } = require('sequelize');
         primaryKey: true,
       },
       image: {
-        type: DataTypes.STRING,
-        allowNull: true,
+        type: DataTypes.TEXT,
+        allowNull: false,
       },
       name: {
         type: DataTypes.STRING,

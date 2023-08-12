@@ -16,16 +16,27 @@ export default function Detail() {
     dispatch(getDetail(id));
   }, [dispatch, id]);
 
+  console.log("Dog Detail:", dogDetail);
 
   return (
     <div className="detailContainer">
   <div className="top-section">
-    <img src="../../../public/patan-cel.png" alt="Imagen de Cabecera" className="header-image" />
+    <img src="../../../public/pata.png" alt="Imagen de Cabecera" className="header-image" />
     <div className="linkHome">
+    <img src="../../../public/dogHouse.png" className="dogHouse" alt="Imagen de Prueba"></img>
+    <br/>
       <Link to="/home" className="link">
         <span>HOME</span>
       </Link>
     </div>
+    <br/>
+    <div className="linkForm">
+      <Link to="/formulario" className="link">
+        <span>CREAT DOGS</span>
+      </Link>
+    </div>
+    {/* <img src="../../../public/creat.png" className="dogHouse" alt="Imagen de Prueba"></img> */}
+
   </div>
 
     <div className="card">
@@ -33,13 +44,13 @@ export default function Detail() {
         <div className="text">
           <h2 className="detailName">{dogDetail.name}</h2>
           <h5>Temperaments:</h5>
-<b className="detailTemperaments">
-  {dogDetail.createdInDB && dogDetail.temperaments
-    ? dogDetail.temperaments.map((temperament) => (
-        <span key={temperament.id}>{temperament.name}, </span>
-      ))
-    : dogDetail.temperament}
-</b>
+ <b className="detailTemperaments">
+    {dogDetail.createdInDB && dogDetail.Temperaments
+      ? dogDetail.Temperaments.map((temperament) => (
+          <span key={temperament.name}>{temperament.name}, </span>
+        ))
+      : dogDetail.temperament}
+  </b>
 
           <h3></h3>
           <h5>Weight:</h5>

@@ -37,7 +37,7 @@ export const getDetail = (id) => (dispatch) => {
 		.then(({ data }) => {
 			dispatch({
 				type: "GET_DETAIL",
-				payload: data,
+				payload:data,
 			});
 		});
 };

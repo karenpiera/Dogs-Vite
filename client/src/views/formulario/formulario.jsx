@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 
 /* eslint-disable react/jsx-key */
@@ -52,6 +53,7 @@ function Formulario() {
   weightMin:"",
   weightMax:"",
   life_span:"",
+  image: "",
   temperament:[]
   })
 
@@ -98,6 +100,7 @@ function handleSubmit(e) {
         weightMin: "",
         weightMax: "",
         life_span: "",
+        image: "",
         temperament: [],
       });
     })
@@ -161,22 +164,33 @@ useEffect(() => {
       {errors.life_span && <span className="error">{errors.life_span}</span>}
       </div>
 
-      <div> 
-      <label>Temperaments </label>
+      <div>
 
-      <select onChange={handleSelect} className="listTemps">
-  <option hidden>Dogs temperaments</option>
-  {temperament.map((temperament, index) => (
-    <option key={index} value={temperament}>
-      {temperament}
-    </option>
-  ))}
-</select>
+      <label>Image</label>
+			<input placeholder="image" type="text" name="image"	value={input.value}  onChange={handleChange}/>
+			</div>
 
 
+      <div>
+  <label>Temperaments</label>
+  <select onChange={handleSelect} className="listTemps">
+    <option hidden>Select Temperaments</option>
+    {temperament.map((temperament, index) => (
+      <option key={index} value={temperament}>
+        {temperament}
+      </option>
+    ))}
+  </select>
+  <div >
+    {input.temperament.map((temp, index) => (
+      <span key={index} >
+        {temp}
+      </span>
+    ))}
+  </div>
+</div>
 
 
-      </div>
       <button type="submit">Create Dog</button>
     </form>
     </div>

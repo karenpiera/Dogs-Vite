@@ -86,7 +86,7 @@ router.post("/dogs", async (req, res) => {
 		createdInDB,
 		temperament,
 	} = req.body;
-console.log(heightMin)
+
 	let height = `${heightMin} - ${heightMax}`;
 	let weight = `${weightMin} - ${weightMax}`;
 
