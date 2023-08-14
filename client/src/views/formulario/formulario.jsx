@@ -105,7 +105,6 @@ function handleSubmit(e) {
       });
     })
     .catch((error) => {
-      console.error("Error al crear el perro:", error);
       alert("Ocurrió un error al crear el perro. Por favor, intenta de nuevo.");
     });
     navigate("/home");

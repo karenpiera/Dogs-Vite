@@ -16,8 +16,6 @@ function Home() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 8;
   const temperament = useSelector((state) => state.temperaments);
-  // const [filtered,setFiltered] = useState(allDogs)
-  // const [searchString, setSearchString]=useState("")
   const [name, setName] = useState("");
   const [peso, setPeso] = useState("");
 	const [orden, setOrden] = useState("");
@@ -33,15 +31,11 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
     setName(e.target.value);
   }
 
-  // function handleChange(e) {
-  //   e.preventDefault()// para que pagina no refesque  
-  //   serachString(e.target.value) 
-  // }
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(getDogByName(name));
-    //setName("");
+  dispatch(getDogByName(name));  
   }
+  
 
   function nextPage() {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -56,9 +50,9 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
     const selectedValue = e.target.value;
     
     if (selectedValue === "A-Z") {
-      dispatch(filterByName("Asc")); // Llama a la acción para ordenar A-Z
+      dispatch(filterByName("Asc"));
     } else if (selectedValue === "Z-A") {
-      dispatch(filterByName("Desc")); // Llama a la acción para ordenar Z-A
+      dispatch(filterByName("Desc")); 
     }
     
     setCurrentPage(1);
@@ -80,24 +74,10 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
       dispatch(filterByTemperament(e.target.value));
   }
 
-  // function handleSubmit (){
-  //   const filtered= allDogs.filter(dog=> dog.name.includes(serachString));
-  //   setFiltered(filtered)
-  // }
-
   useEffect(() => {
 		dispatch(getDogs());
-		// return (()=>{
-		// clearDetail()
-		// })
 	}, [dispatch]);
   
-
-	// useEffect(() => {
-	// 	dispatch(getDetail());
-	// }, [dispatch]);
-  
-
 
   return (
     <div className="home">

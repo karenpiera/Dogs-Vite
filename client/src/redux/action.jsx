@@ -18,7 +18,7 @@ export const getDogByName = (name) => (dispatch) => {
 		payload: data,
 		});
 	});
-  };
+  }
 
 export const getDogTemperament = () => (dispatch) => {
 	return axios

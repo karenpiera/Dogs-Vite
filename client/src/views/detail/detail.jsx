@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getDetail,deleteDetail } from "../../redux/action";
+import { getDetail} from "../../redux/action";
 import "./detail.css";
 
 export default function Detail() {
@@ -17,10 +17,8 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(getDetail(id));
-    return()=>{dispatch(deleteDetail())}
   }, [dispatch, id]);
 
-  console.log("Dog Detail:", dogDetail);
 
   return (
     <div className="detailContainer">
@@ -84,46 +82,4 @@ export default function Detail() {
 }
 
 
-
-
-
-// import axios from "axios"
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from "react";
-// import './detail.css';
-
-// const Detail = () => {
-//     const {id} = useParams();
-//     const [dogs, setdogs] = useState({})
-
-//     useEffect(() => {
-//         axios(`http://localhost:3001/dogs/${id}`)
-//         .then(({ data }) => {
-//            if (data.name) {
-//               setdogs(data);
-//            } else {
-//               window.alert('No hay personajes con ese ID');
-//            }
-//         });
-//         return setdogs({});
-//      }, [id]);
-//     return(
-//         <div className="card">
-//         <div className="content">
-//           <div className="text">
-//             <h1>DOGS</h1>
-//             <h2>{dogs?.name}</h2>
-//             <h2>{dogs?.status}</h2>
-//             <h2>{dogs?.species}</h2>
-//             <h2>{dogs?.gender}</h2>
-//           </div>
-//           <div className="imageContainer">
-//             <img className="image" src={dogs?.image} alt={dogs?.name} />
-//           </div>
-//         </div>
-//       </div>
-//     )
-// }
-
-// export default Detail;
 

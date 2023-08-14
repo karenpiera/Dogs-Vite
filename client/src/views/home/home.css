@@ -62,7 +62,7 @@
   color: #0056b3;
   text-decoration: underline;
 }
- /* Estilos para los selects */
+
 .search-box select {
   color: #1919db;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -74,14 +74,11 @@
   cursor: pointer;
   transition: border-color 0.3s ease;
 }
-
-/* Estilos para los options dentro de los selects */
 .search-box select option {
   color: #595858;
   font-size: 14px;
 }
 
-/* Cambiar el color de fondo cuando el select está en foco */
 .search-box select:focus {
     outline: none;
   border-color: #007bff;
@@ -95,7 +92,6 @@
   margin-top: 20px;
 }
 
-/* Estilos para los botones de navegación */
 .custom-cursor,
 button {
   padding: 10px 15px;
@@ -119,7 +115,6 @@ button:disabled {
   background-color: #ccc;
 }
 
-/* Estilos para el número de página */
 span {
   margin: 0 10px;
   font-size: 18px;
