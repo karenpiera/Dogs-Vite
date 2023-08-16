@@ -48,24 +48,28 @@ router.get('/dogs/:id', async (req, res) => {
 	}
   });
 
-router.get("/dogs/name", async (req, res) => {
-  const allDogs = await getAllDogs();
-  const { name } = req.query;
-
-  if (name) {
-    const matchingDogs = allDogs.filter((dog) =>
-      dog.name.toLowerCase().includes(name.toLowerCase())
-    );
-
-    if (matchingDogs.length > 0) {
-      res.send(matchingDogs);
-    } else {
-      res.status(404).send("No breeds found matching the provided name.");
-    }
-  } else {
-    res.status(400).send("Please provide a name query parameter.");
-  }
-});
+  router.get("/name", async (req, res) => {
+	const { name } = req.query;
+  
+	if (!name) {
+	  return res.status(400).send("Please provide a name query parameter.");
+	}
+  
+	const allDogs = await getAllDogs();
+	const matchingDogs = allDogs.filter((dog) =>
+	  dog.name.toLowerCase().includes(name.toLowerCase())
+	);
+  
+	if (matchingDogs.length > 0) {
+	  res.send(matchingDogs);
+	} else {
+	  res.status(404).send("No breeds found matching the provided name.");
+	}
+  });
+  
+  
+  
+  
 
 router.get("/temperament", async (req, res) => {
 	const dogTemp = await getTemperament();

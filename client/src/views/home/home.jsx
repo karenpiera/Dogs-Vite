@@ -2,7 +2,7 @@
 /* eslint-disable no-undef */
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs,getDogByName,filterByName,filterByTemperament,filterByWeight } from "../../redux/action";
+import { getDogs,getDogByName,filterByName,filterByTemperament,filterByWeight,getDogTemperament} from "../../redux/action";
 import Navbar from "../../componentes/navbar/navbar";
 import Cards from "../../componentes/cards/cards";
 import "./home.css";
@@ -76,7 +76,9 @@ const currentItems = allDogs.slice(indexOfFirstItem, indexOfLastItem);
 
   useEffect(() => {
 		dispatch(getDogs());
+    dispatch(getDogTemperament());
 	}, [dispatch]);
+  
   
 
   return (

@@ -11,7 +11,7 @@ export const getDogs = () => (dispatch) => {
 
 export const getDogByName = (name) => (dispatch) => {
 	return axios
-	.get(`http://localhost:3001/dogs?name=${name}`)
+	.get(`http://localhost:3001/name?name=${name}`)
 	.then(({ data }) => {
 		dispatch({
 		type: "GET_DOG_BY_NAME",
@@ -63,8 +63,3 @@ export const filterByTemperament = (payload) => {
 	};
 };
 
-export const deleteDetail = () => {
-    return {
-            type: "DELETE_DETAIL",
-        }
-    }

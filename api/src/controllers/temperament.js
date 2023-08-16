@@ -9,11 +9,11 @@ const getTemperament = async () => {
 		);
 
 		const temperaments = response.data
-			.filter((breed) => breed.temperament) // Filtrar solo las razas con un temperamento definido
+			.filter((breed) => breed.temperament) 
 			.map((breed) => breed.temperament.split(","))
 			.flat()
 			.map((temp) => temp.trim())
-			.filter((temp, index, arr) => temp && arr.indexOf(temp) === index); // Eliminar duplicados y valores vacíos
+			.filter((temp, index, arr) => temp && arr.indexOf(temp) === index);
 
 		await Promise.all(
 			temperaments.map(async (temp) => {
