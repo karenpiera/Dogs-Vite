@@ -1,0 +1,30 @@
+.contenedor {
+  display: flex;
+}
+
+.background-image {
+  flex: 1;
+  background-image: url('pict.png'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 0px;
+  
+}
+
+.content-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-button-image {
+  width: 140px; 
+  height: 140px;
+}
+
+
+

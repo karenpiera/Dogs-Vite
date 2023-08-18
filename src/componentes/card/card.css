@@ -1,0 +1,57 @@
+.card-container {
+  font-family: "Homer Simpson UI";
+  width: 180px;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  transition: transform 0.25s ease-out;
+  background-color: #b3b3b3;
+  background-image:url("fondo.jpg");
+  box-shadow:0px 0px 10px  #0b15df;
+  
+}
+
+.card-container h2 {
+  font-family: "Homer Simpson UI";
+    color: #440de8; 
+  margin: 5px 0;
+  outline: none;
+}
+
+.card-container p {
+  font-family: "Homer Simpson UI";
+    color: #060506; 
+  margin: 5px 0;
+  outline: none;
+}
+.card-container:hover {
+  transform: scale(1.05);
+  
+}
+
+.imageContainer {
+  height: 150px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-container a {
+  text-decoration: none;
+}
+  
+  

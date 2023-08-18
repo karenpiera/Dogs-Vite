@@ -1,0 +1,117 @@
+.App {
+  background-image: url("fondo.jpg");
+    background-size: cover; 
+    background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.App form {
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  padding: 50px;
+  border: 3px solid #3b22dc;
+  border-radius:30px;
+  margin-top: 20px;
+  box-shadow:0px 0px 10px 6px #0b5dd0;
+
+}
+
+.App label {
+  font-weight: bold;
+}
+
+.App input,
+.App select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 2px solid #1f38f4;
+  border-radius: 5px;
+}
+
+.App .error {
+  color: rgb(24, 58, 225);
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.App button {
+  border: none;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.App button:hover {
+  background-color: #0056b3;
+}
+
+.App select {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.link {
+	color: #007bff;
+	text-decoration: none;
+	margin-right: 10px;
+	font-weight: bold;
+  }
+  
+  .link:hover {
+	color: #0056b3;
+	text-decoration: underline;
+  }
+  
+  .dogHous{
+    width: 70px; 
+    height: 70px;
+    }
+
+
+    .formulario {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    
+    .input-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .input-container label {
+      margin-bottom: 5px;
+    }
+    
+    .input-container input {
+      width: 100%;
+    }
+        
+.refresh{
+  position: absolute;
+    width: 60px; 
+    height: 70px;
+    top: 10px;
+    left: 160px;
+    margin-top: 0px;
+    margin-left: 300px;
+  }
+  .refresh {
+    cursor: pointer;
+    margin-right: 10px;
+  }

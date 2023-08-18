@@ -1,0 +1,72 @@
+/* navbar.css */
+.navbar {
+  background-color: #b3b3b3;
+  border-bottom: 2px solid #2c6bc9;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.refresh-container {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.refresh-button {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.links-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.search-box form {
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+}
+
+.search-box button {
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: rgb(55, 0, 157);
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #0056b3;
+}
+

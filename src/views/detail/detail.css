@@ -1,0 +1,126 @@
+.card {
+	background-image: url("../../../public/fondo.jpg");
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	background-color: #716d7c;
+	border-radius: 30px;
+	padding: 30px;
+	width: 900px;
+	align-items: center;
+	margin: 3rem auto;
+	border: 4px;
+	box-shadow:0px 0px 10px 6px #0b5dd0;
+	margin-top: -130px;
+}
+  
+  
+  .content {
+	display: flex;
+	align-items: stretch;
+	padding: 0px;
+  }
+  
+  .text {
+	flex: 1;
+  }
+  
+  .text h1 {
+	font-family: "Homer Simpson UI";
+	height: 80px;
+	font-size: 60px;
+	font-weight: bold;
+	-webkit-text-stroke-width: 1.5px; 
+	-webkit-text-stroke-color: #2e6ad9; 
+	
+  }
+  
+  .text h2 {
+	margin: 1px 30px 40px 10px;
+	font-size: 45px;
+	-webkit-text-stroke-width: 0.9px;
+	-webkit-text-stroke-color: #0a67d9; 
+	
+  }
+  .text h5{
+	padding: 10px 0px 5px;
+	margin: 10px;
+	font-size: 27px;
+	-webkit-text-stroke-width: 0.5px;
+	-webkit-text-stroke-color: #0a67d9; 
+	display: inline; 
+	
+  }
+  .text b {
+	font: oblique bold 120% ;
+	margin: 0;
+	height: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 100%;
+
+  }
+  
+  .imageCont {
+	width:450px;
+	height:300px;
+	padding: 50px 0px;	
+}
+
+.imagen {
+	object-fit: cover;
+  width:90%;
+  height:100%;
+  padding: 20px;
+}
+.imagen:hover{
+	-webkit-transform: rotateY(180deg);
+	-webkit-transform-style: preserve-3d;
+	transform: rotateY(180deg);
+	transform-style: preserve-3d;	
+}
+
+.top-section {
+	position: relative; 
+	width: 100%;
+	height: 300px;
+	overflow: hidden; 
+  }
+  
+  .header-image {
+	top:20px;
+	width: 100%;
+	height: 50%;
+
+  }
+  
+  .linkHome {
+	position: absolute;
+	top: 20px; 
+	left: 20px;
+	top: 20px; 
+  left: 50px;
+  }
+  .linkForm {
+	position: absolute;
+	top:100px; 
+	left: 1000px;
+	top: 20px;
+  left: 850px;
+  }
+  .dogHouse{
+	top:10px; 
+	left: 100px;
+	top: 10px; 
+	width: 70px; 
+	height: 70px;
+  }
+
+.dogCreat{ 
+	width: 70px; 
+	height: 70px;
+	margin-top: 10px;
+	margin-left: 30px;
+}
+
+  
