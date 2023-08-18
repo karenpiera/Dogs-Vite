@@ -48,7 +48,7 @@ router.get('/dogs/:id', async (req, res) => {
 	}
   });
 
-  router.get("/name", async (req, res) => {
+  router.get("/dogs/name", async (req, res) => {
 	const { name } = req.query;
   
 	if (!name) {
@@ -71,15 +71,21 @@ router.get('/dogs/:id', async (req, res) => {
   
   
 
-router.get("/temperament", async (req, res) => {
-	const dogTemp = await getTemperament();
-	const allTemper = await Temperament.findAll();
-	const filteredTemper = await allTemper.map((obj) => obj.name);
-	res.status(200).send(filteredTemper);
-});
+  router.get("/temperament", async (req, res) => {
+	try {
+	  const dogTemp = await getTemperament();
+	  const allTemper = await Temperament.findAll();
+	  const filteredTemper = await allTemper.map((obj) => obj.name);
+	  res.status(200).send(filteredTemper);
+	} catch (error) {
+	  res.status(500).send("Internal Server Error");
+	}
+  });
+  
 
 router.post("/dogs", async (req, res) => {
-	const {
+	try {
+	  const {
 		name,
 		heightMin,
 		heightMax,
@@ -89,26 +95,34 @@ router.post("/dogs", async (req, res) => {
 		image,
 		createdInDB,
 		temperament,
-	} = req.body;
-
-	let height = `${heightMin} - ${heightMax}`;
-	let weight = `${weightMin} - ${weightMax}`;
-
-	const breedCreated = await Dog.create({
+	  } = req.body;
+  
+	  let height = `${heightMin} - ${heightMax}`;
+	  let weight = `${weightMin} - ${weightMax}`;
+  
+	  const breedCreated = await Dog.create({
 		name,
 		height,
 		weight,
 		life_span,
 		image,
 		createdInDB,
-	});
-
-	const temperamentDb = await Temperament.findAll({
+	  });
+  
+	  const temperamentDb = await Temperament.findAll({
 		where: { name: temperament },
-	});
-
-	breedCreated.addTemperament(temperamentDb);
-	res.send("Breed created");
-});
+	  });
+  
+	  if (!temperamentDb || temperamentDb.length === 0) {
+		return res.status(400).send("Temperament not found");
+	  }
+  
+	  breedCreated.addTemperament(temperamentDb);
+	  res.send("Breed created");
+	} catch (error) {
+	  res.status(500).send("Internal Server Error");
+	}
+  });
+  
 
 module.exports = router;

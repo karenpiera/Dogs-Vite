@@ -20,12 +20,18 @@ function validate(input){
   if( !input.heightMin ){
     errors.heightMin= "Height Min is required!";
     }
+    if( input.heightMin >0){
+      errors.heightMin= "Height Min is required!";
+      }
   if( !input.heightMax ){
       errors.heightMax= "Height Max is required!";
       }
   if( !input.weightMin){
         errors.weightMin= "Weight Min is required!";
         }
+        if( input.weightMin >0){
+          errors.weightMin= "Weight Min is required!";
+          }
   if( !input.weightMax ){
     errors.weightMax= "Weight Max is required!";
     } 

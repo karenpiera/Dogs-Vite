@@ -59,7 +59,7 @@ function rootReducer(state = initialState, action) {
 						action.payload
 					);
 				}
-				return allDogs3;
+				return null;
 			});
 
 			return {
@@ -84,7 +84,10 @@ function rootReducer(state = initialState, action) {
 				...state,
 				dogs: action.payload,
 			};
-
+		case "POST_DOG":
+			return {
+				...state,
+			};
 		case "GET_TEMPERAMENT":
 			return {
 				...state,
